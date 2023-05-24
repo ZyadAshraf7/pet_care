@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "648689792538",
+    "project_id": "pet-care-4f39a",
+    "storage_bucket": "pet-care-4f39a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648689792538:android:a1ac771e1ead8b773d83a3",
+        "android_client_info": {
+          "package_name": "com.example.pet_care"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648689792538-5rab6b0605l075rhust9on2g4qol2mgk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJbb7HpIXH17paVdws43yfsHPSMKikqQk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "648689792538-5rab6b0605l075rhust9on2g4qol2mgk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
