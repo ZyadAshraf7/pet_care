@@ -13,7 +13,7 @@ import 'firebase_options.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  await SharedPrefs.init();
+  await SharedPrefs.init(); //init local storage
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
