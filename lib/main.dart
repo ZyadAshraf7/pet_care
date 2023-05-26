@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
             filled: true,
           ),
         ),
-        home:  SafeArea(child: UserPreferences.getFirstTimeState()==true?SplashScreen():UserPreferences.getLoginState()==true?const BottomNavBar(): const LoginScreen()),
+        home:  SafeArea(child: SplashScreen()),
       ),
     );
   }

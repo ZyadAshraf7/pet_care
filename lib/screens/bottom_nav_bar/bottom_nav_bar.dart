@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:pet_care/constants/colors.dart';
-import 'package:pet_care/screens/appointments_screen/appointments_screen.dart';
-import 'package:pet_care/screens/home_screen/home_screen.dart';
-import 'package:pet_care/screens/my_appointments/my_appointments.dart';
-import 'package:pet_care/screens/profile_screen/profile_screen.dart';
-import 'package:pet_care/shared_preference/user_preference.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
+import '../../constants/colors.dart';
+import '../../shared_preference/user_preference.dart';
 import '../bag_screen/bag_screen.dart';
-
+import '../home_screen/home_screen.dart';
+import '../my_appointments/my_appointments.dart';
+import '../profile_screen/profile_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({Key? key}) : super(key: key);
@@ -18,6 +17,7 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar> {
 
+   PersistentTabController _controller =PersistentTabController(initialIndex: 0);
   int _currentIndex = 0;
 
   final List<Widget> _screens = const [
@@ -26,6 +26,35 @@ class _BottomNavBarState extends State<BottomNavBar> {
     BagScreen(),
     ProfileScreen(),
   ];
+
+  List<PersistentBottomNavBarItem> _navBarsItems() {
+    return [
+      PersistentBottomNavBarItem(
+        icon: const Icon(Icons.home),
+        title: ("Home"),
+        activeColorPrimary: AppColors.primaryBlue,
+        inactiveColorPrimary: AppColors.deepGrey,
+      ),
+      PersistentBottomNavBarItem(
+        icon: Icon(Icons.star_border),
+        title: 'Bookings',
+        activeColorPrimary: AppColors.primaryBlue,
+        inactiveColorPrimary: AppColors.deepGrey,
+      ),
+      PersistentBottomNavBarItem(
+        icon: Icon(Icons.shopping_bag),
+        title: 'Bag',
+        activeColorPrimary: AppColors.primaryBlue,
+        inactiveColorPrimary: AppColors.deepGrey,
+      ),
+      PersistentBottomNavBarItem(
+        icon: Icon(Icons.person),
+        title: 'Profile',
+        activeColorPrimary: AppColors.primaryBlue,
+        inactiveColorPrimary: AppColors.deepGrey,
+      ),
+    ];
+  }
   @override
   void initState() {
     super.initState();
@@ -33,38 +62,22 @@ class _BottomNavBarState extends State<BottomNavBar> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: _screens[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
+    return Center(
+      child: PersistentTabView(
+        context,
+        controller: _controller,
+        screens: _screens,
+        items: _navBarsItems(),
+        confineInSafeArea: true,
         backgroundColor: Colors.white,
-        elevation: 0,
-        currentIndex: _currentIndex,
-        selectedItemColor: AppColors.primaryBlue,
-        unselectedItemColor: AppColors.deepGrey,
-        showUnselectedLabels: true,
-        onTap: (int index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.star_border),
-            label: 'Bookings',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_bag),
-            label: 'Bag',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
+        handleAndroidBackButtonPress: true,
+        resizeToAvoidBottomInset: true,
+        hideNavigationBarWhenKeyboardShows: true,
+        decoration: NavBarDecoration(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        popAllScreensOnTapOfSelectedTab: true,
+        navBarStyle: NavBarStyle.style6,
       ),
     );
   }

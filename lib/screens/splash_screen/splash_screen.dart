@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:pet_care/screens/login_screen/login_screen.dart';
 import 'package:pet_care/shared_preference/user_preference.dart';
 
+import '../bottom_nav_bar/bottom_nav_bar.dart';
+
 class SplashScreen extends StatefulWidget {
   @override
   _SplashScreenState createState() => _SplashScreenState();
@@ -27,8 +29,10 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     _animationController.forward();
 
     Timer(const Duration(seconds: 3), () {
-      UserPreferences.setFirstTimeFalse();
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>const LoginScreen()));
+      // UserPreferences.setFirstTimeFalse();
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) {
+        return UserPreferences.getLoginState()==true?const BottomNavBar(): const LoginScreen();
+      }));
     });
   }
 
