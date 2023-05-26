@@ -119,7 +119,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     int? resendToken) async {
                                   verificationID = verificationId;
                                   print("code sent function");
-                                  UserModel userInfo = UserModel(phoneNumber: phoneNumberFormatted,imageUrl: "",name: name.text,email: email.text,);
+                                  UserModel userInfo = UserModel(phoneNumber: phoneNumberFormatted,name: name.text,email: email.text,);
                                   Navigator.of(context).push(MaterialPageRoute(
                                       builder: (_) => PhoneVerificationScreen(
                                           user: userInfo,
