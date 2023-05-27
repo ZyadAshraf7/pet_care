@@ -29,11 +29,11 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBJbb7HpIXH17paVdws43yfsHPSMKikqQk',
-    appId: '1:648689792538:android:a1ac771e1ead8b773d83a3',
-    messagingSenderId: '648689792538',
-    projectId: 'pet-care-4f39a',
-    storageBucket: 'pet-care-4f39a.appspot.com',
+    apiKey: 'AIzaSyBJbb7HpIXH17paVdws43yfsHPSMKikqQk',/* used to authenticate the application or user making requests to a specific service*/
+    appId: '1:648689792538:android:a1ac771e1ead8b773d83a3',/*used in the context of mobile applications to uniquely identify the application*/
+    messagingSenderId: '648689792538',/*specific to messaging services, such as Firebase Cloud Messaging (FCM)*/
+    projectId: 'pet-care-4f39a',/* represents the unique identifier or name given to a project*/
+    storageBucket: 'pet-care-4f39a.appspot.com', /*represents the storage bucket associated with the project. In cloud storage services like Firebase Storage*/
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
