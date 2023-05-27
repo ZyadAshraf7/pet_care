@@ -73,6 +73,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
         handleAndroidBackButtonPress: true,
         resizeToAvoidBottomInset: true,
         hideNavigationBarWhenKeyboardShows: true,
+        stateManagement: (_controller.index==2 || _controller.index==1) ? false : true,
+        onItemSelected: (indx){
+          setState(() {
+            _controller.index=indx;
+          });
+        },
         decoration: NavBarDecoration(
           borderRadius: BorderRadius.circular(10.0),
         ),

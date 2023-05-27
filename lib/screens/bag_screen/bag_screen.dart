@@ -56,6 +56,12 @@ class _BagScreenState extends State<BagScreen> {
   }
   TextEditingController location = TextEditingController();
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print("baag screen");
+  }
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
