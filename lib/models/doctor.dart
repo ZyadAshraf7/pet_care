@@ -43,19 +43,3 @@ class Doctor {
   }
 }
 
-/*{
-  "name": "John Matthews",
-  "phoneNumber": "+201050235569",
-  "bio": "Dr. John Matthews is a highly experienced and compassionate veterinarian with a deep passion for animal care. With over 20 years of dedicated service, he has become a trusted name in the veterinary community. Driven by his love for animals and their well-being, he pursued a career in veterinary medicine after witnessing the positive impact veterinarians can have on both animals and their owners.",
-  "imageUrl":"http://dummyimage.com/190x100.png/cc0000/ffffff",
-  "fees": 140,
-  "daysAvailable": [
-    "Sunday",
-    "Monday"
-  ],
-  "timeAvailable": [
-    "2:00 PM",
-    "11:00 AM"
-  ]
-}
-*/
